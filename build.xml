@@ -1,0 +1,21 @@
+<?xml version="1.0" ?> 
+<project name="webapp" default="war">
+
+	<path id="compile.classpath">
+		<fileset dir="src/main/webapp">
+			<include name="*.jsp"/>
+		</fileset>
+	</path>
+	
+	<target name="compile" depends="init" >
+		<javac destdir="." debug="true" srcdir="src/main/webapp">
+		</javac>
+	</target>
+	
+	<target name="war" depends="compile">
+		<war destfile="dist/AntExample.war" webxml="WebContent/WEB-INF/web.xml">
+			<fileset dir="WebContent"/>
+			<lib dir="src/main/webapp/WEB-INF/lib"/>
+		</war>
+	</target>
+</project>
