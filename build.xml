@@ -1,10 +1,14 @@
-<?xml version="1.0" ?> 
-<project name="webapp" default="war">
+<project>
 
-	
-	<target name="war">
-		<war destfile="dist/AntExample.war" webxml="/src/main/webapp/WEB-INF/web.xml">
-			<fileset dir="/src/main/webapp/*jsp"/>
-		</war>
-	</target>
+<property name="web.dir"   value="/src/main/webappi"/>
+
+<target name="build-war">
+
+   <war destfile="ant.war" webxml="${web.dir}/WEB-INF/web.xml">
+      <fileset dir="${web.dir}">
+         <include name="*.jsp"/>
+      </fileset>
+   </war>
+   
+</target>
 </project>
