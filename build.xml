@@ -1,6 +1,6 @@
 <project>
 
-<property name="web.dir"   value="src/main/webappi"/>
+<property name="web.dir"   value="src/main/webapp"/>
 
 <target name="build-war">
 
